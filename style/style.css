@@ -120,7 +120,19 @@ body {
     color: red;
 }
 
-.victory
+.grow {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+.shrink {
+    transition: 0.2s;
+    transform: scale(1);
+}
+
+.santa:hover {
+    transition: 0.3s;
+    transform: rotate(10deg);
+}
 /* SLIDER */
 
 .slider_controls {

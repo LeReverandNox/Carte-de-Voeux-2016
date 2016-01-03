@@ -256,7 +256,7 @@
 
     function santaPop() {
 
-      $santa = $("<img src='style/images/santa_small.png' alt='santa' />");
+      $santa = $("<img src='style/images/santa_small.png' alt='santa' class='santa' />");
       $santa.css({
 
         position: "fixed",
@@ -271,7 +271,17 @@
 
         right: 160
 
-      }, 3000);
+      }, 3000, function() {
+
+        $santa.css({transition: "0.3s"});
+
+      });
+
+      $santa.on("mousedown", function(e) {
+
+        e.preventDefault();
+
+      });
 
     }
 
@@ -293,6 +303,25 @@
         left: 120
 
       }, 2000);
+
+      $reindeer.on("mousedown", function(e) {
+
+        e.preventDefault();
+
+      });
+
+      $reindeer.on("click", function() {
+
+        $reindeer.removeClass("shrink");
+        $reindeer.addClass("grow");
+        setTimeout(function() {
+
+          $reindeer.removeClass("grow");
+          $reindeer.addClass("shrink");
+
+        }, 200)
+
+      });
 
     }
 

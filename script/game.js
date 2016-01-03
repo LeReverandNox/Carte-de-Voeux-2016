@@ -1,6 +1,6 @@
  $(document).ready(function() {
 
-  var square= 1;
+  var square= 8;
   var j = 0;
   var k = square;
   var l = 1;

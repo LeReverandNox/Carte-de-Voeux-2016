@@ -325,12 +325,32 @@
 
     }
 
+    function mute() {
+
+      if (music.muted) {
+
+        $("#mute_btn").addClass("mute");
+        $("#mute_btn").removeClass("unmute");
+        music.muted = false;
+
+      }
+      else {
+
+       $("#mute_btn").addClass("unmute");
+       $("#mute_btn").removeClass("mute");
+       music.muted = true;
+
+     }
+
+   }
+
     // OH OH OH
     setTimeout(function() {
 
       getMessage();
       snow();
       music.play();
+      $("#mute_btn").addClass("mute");
       displayIntro();
       generateGameMarkup();
 
@@ -340,4 +360,11 @@
     music.onended = function() {
       music.play();
     };
+
+    $("#mute_btn").on("click", function() {
+
+      mute();
+
+    });
+
   })

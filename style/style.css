@@ -133,6 +133,21 @@ body {
     transition: 0.3s;
     transform: rotate(10deg);
 }
+
+#mute_btn {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-size: cover;
+}
+.mute {
+    background-image: url(images/umute.png);
+}
+.unmute {
+    background-image: url(images/mute.png);
+}
 /* SLIDER */
 
 .slider_controls {

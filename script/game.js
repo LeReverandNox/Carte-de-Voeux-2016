@@ -300,7 +300,7 @@
     setTimeout(function() {
 
       getMessage();
-      // snow();
+      snow();
       music.play();
       displayIntro();
       generateGameMarkup();

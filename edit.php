@@ -3,10 +3,18 @@
 session_start();
 $msg_file = "include/message.txt";
 
-if (isset($_POST["edit_message"]) && !empty($_POST["message"]))
+if (isset($_POST["edit_message"]))
 {
-    $msg = htmlspecialchars($_POST["message"]);
-    file_put_contents($msg_file, $msg);
+    if (!empty($_POST["message"]))
+    {
+        $msg = $_POST["message"];
+        file_put_contents($msg_file, $msg);
+        $_SESSION["INFO"] = "Le message a bien été modifié";
+    }
+    else
+    {
+        $_SESSION["ERROR"] = "Le message est trop court";
+    }
 }
 
 if (isset($_POST["login"]))
@@ -14,6 +22,10 @@ if (isset($_POST["login"]))
     if (!empty($_POST["password"]) && $_POST["password"] === "banane")
     {
         $_SESSION["logged"] = true;
+    }
+    else
+    {
+        $_SESSION["ERROR"] = "Mauvais mot de passe";
     }
 }
 

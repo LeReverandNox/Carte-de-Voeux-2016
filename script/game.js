@@ -1,10 +1,10 @@
  $(document).ready(function() {
 
-    var square= 8;
-    var j = 0;
-    var k = square;
-    var l = 1;
-    var nbSliders = square * square;
+  var square= 1;
+  var j = 0;
+  var k = square;
+  var l = 1;
+  var nbSliders = square * square;
 
     // Variables pour la partie
     var music = new Audio('script/media/jingle_bell.mp3');
@@ -59,7 +59,6 @@
       // On vide la div score et on desactive les clicks
       $(".slider").off();
 
-      $(".score").fadeOut(2000);
       $(".header_intro").fadeOut(2000);
       $mosaic.fadeOut(2000);
       $(".victory").fadeOut(2000, function() {
@@ -67,6 +66,8 @@
         if (victory) {
 
           $(".header_intro").html("<p class='header_text'>" + message + "</p>");
+          $(".header_intro").append("<a href='index.html' class='retry_link'>Rejouer ?</a>");
+
 
         } else {
 
@@ -84,18 +85,18 @@
 
     function getMessage() {
 
-        $.ajax({
+      $.ajax({
 
-            url: "wishcard.php",
-            type: "GET",
+        url: "wishcard.php",
+        type: "GET",
 
-            success: function(resultat) {
+        success: function(resultat) {
 
-                message = resultat;
+          message = resultat;
 
-            }
+        }
 
-        });
+      });
 
     }
 
@@ -119,12 +120,15 @@
 
         $para2.fadeIn(4000, function() {
 
-        santaPop();
+          santaPop();
           reindeerPop();
           $mosaic.fadeIn(4000, function() {
 
-            $(".victory").fadeIn(3000);
-            startGame();
+            $(".victory").fadeIn(2000, function() {
+
+              startGame();
+
+            });
 
           });
 
@@ -203,7 +207,6 @@
     function startGame() {
 
       for (var i = 1; i <= nbSliders; i++) {
-        console.log("on active");
         // On ajoute un listener par slider
         $("#slider" + i).on("click", function() {
 
@@ -241,9 +244,11 @@
           maxSize: 10,
           round: true,
           shadow: true,
-          flakeCount: 100
+          flakeCount: 70
 
         });
+
+        snowing = true;
 
       };
 
@@ -264,7 +269,7 @@
 
       $santa.animate({
 
-        right: 200
+        right: 160
 
       }, 3000);
 
@@ -285,7 +290,7 @@
 
       $reindeer.animate({
 
-        left: 200
+        left: 120
 
       }, 2000);
 
@@ -295,12 +300,15 @@
     setTimeout(function() {
 
       getMessage();
-      snow();
+      // snow();
       music.play();
       displayIntro();
       generateGameMarkup();
 
     }, 1250)
 
-
-})
+    // On repete la musique comme un sagouin
+    music.onended = function() {
+      music.play();
+    };
+  })

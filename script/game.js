@@ -213,7 +213,7 @@
           // Si le slider n'est pas checked, je remplace son contenu par une croix rouge et j'incremente le score
           if ($(this).attr("status") !== "checked") {
 
-            var $img = $('<img src="style/images/tick.png" alt="tick" />').width(rand3);
+            var $img = $('<img src="style/images/snowball.png" alt="snowball" />').width(rand3);
             $(this).html($img);
             $(this).attr("status", "checked");
 

@@ -72,7 +72,7 @@ a {
 
 body {
     font-size: 16px;
-    font-family: 'frostyregular';
+    font-family: 'frostyregular', sans-serif;
     background: url(images/bg_red.jpg) no-repeat center fixed;
     background-size: cover;
     line-height: 1.4em;
@@ -93,14 +93,14 @@ body {
     text-align: center;
 }
 .header_text, .victory {
-    font-family: 'frostyregular';
+    font-family: 'frostyregular', sans-serif;
     color: white;
     font-size: 2.25em;
     line-height: 45px;
     word-wrap: break-word;
 }
 .retry_link {
-    font-family: 'frostyregular';
+    font-family: 'frostyregular', sans-serif;
     color: #03B903;
     font-size: 3em;
     display: block;

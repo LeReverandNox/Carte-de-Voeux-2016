@@ -1,0 +1,194 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*, body, html {
+    box-sizing: border-box;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+a {
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'frostyregular';
+    src: url('fonts/frosty-webfont.eot');
+    src: url('fonts/frosty-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/frosty-webfont.woff2') format('woff2'),
+         url('fonts/frosty-webfont.woff') format('woff'),
+         url('fonts/frosty-webfont.ttf') format('truetype'),
+         url('fonts/frosty-webfont.svg#frostyregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'frostyregular';
+    background-image: url(images/bg_red.jpg);
+    line-height: 1.4em;
+    position: relative;
+    overflow: hidden;
+}
+.main_wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header_intro {
+    padding-top: 150px;
+    display: block;
+    width: 950px;
+    margin: 0 auto;
+    text-align: center;
+}
+.header_text, .victory {
+    font-family: 'frostyregular';
+    color: white;
+    font-size: 2.25em;
+    line-height: 45px;
+}
+.retry_link {
+    font-family: 'frostyregular';
+    color: #03B903;
+    font-size: 3em;
+    line-height: 45px;
+}
+.retry_link:hover {
+    color: #098A09;
+}
+.score_container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.score_container h1 {
+    text-transform: uppercase;
+    color: red;
+}
+
+.victory
+/* SLIDER */
+
+.slider_controls {
+    text-align: center;
+}
+.slider_controls div {
+    display: inline-block;
+}
+.slider_pause {
+    width: 107px;
+    height: 122px;
+    background-repeat: no-repeat;
+    background-image: url("images/playpause.png");
+    background-position: -107px 0px;
+}
+.slider_pause.active {
+    background-position: 0px 0px;
+}
+.slider_previous, .slider_next {
+    width: 90px;
+    height: 88px;
+    background-image: url("images/slider-arrows.png");
+    background-repeat: no-repeat;
+}
+.slider_previous {
+    background-position: -90px 0px;
+}
+.slider_next {
+}
+
+.slider_bullets_holder {
+    margin: auto;
+    text-align: center;
+}
+.slider_bullets_holder li {
+    display: inline;
+}
+.slider_bullets {
+    display: inline-block;
+    width: 27px;
+    height: 30px;
+    background-image: url('images/bullet.png');
+}
+.slider_bullets:hover {
+    background-position: 0px -30px;
+}
+.slider_bullets.active {
+    background-position: 0px -60px;
+}
+
+.slider_thumbnails_holder {
+    text-align: center;
+}
+.slider_thumbnails_holder li {
+    display: inline;
+}
+.slider_thumbnails {
+    max-width: 100px;
+}
+
+.slider_thumbnails.active {
+    border: 1px solid white;
+}
+
+span {
+    display: inline-block;
+}
+.mosaic {
+    line-height: 0;
+    margin: auto;
+    text-align: center;
+}
+#mosaic_holder {
+    margin: auto;
+    padding: 15px;
+}

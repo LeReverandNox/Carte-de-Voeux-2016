@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifiez le message de la carte</title>
+</head>
+<body>
+<div class="main_wrapper">
+    <section class="edit_section">
+    <?php if (!isset($_SESSION["logged"])): ?>
+    <form method="POST">
+        <ul>
+            <li>
+                <label for="password">Le mot de passe ? </label>
+                <input type="password" name="password" id="password "/>
+            </li>
+            <li>
+                <input type="hidden" name="login" />
+                <input type="submit" value="Connexion" />
+            </li>
+        </ul>
+    </form>
+    <?php else: ?>
+        <form method="POST">
+            <ul>
+                <li>
+                    <label for="message">Le message : </label>
+                    <textarea name="message" id="message"><?php echo $message; ?></textarea>
+                </li>
+                <li>
+                    <input type="hidden" name="edit_message" />
+                    <input type="submit" value="Modifier" />
+                </li>
+            </ul>
+        </form>
+
+        <a href="edit.php?action=deco">Déconnexion</a>
+    <?php endif ?>
+    </section>
+</div>
+</body>
+</html>
